@@ -10,7 +10,5 @@ export default async function decorate(block) {
       <hr>
       <h1> Hello Simple Block </h1>
       <hr>
-      `+defaultText;
-      block.innerHTML = defaultText;
-      
+      `+defaultText;      
   }
