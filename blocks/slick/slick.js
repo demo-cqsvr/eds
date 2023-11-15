@@ -7,7 +7,7 @@
 export default async function decorate(block) {
     const defaultHTML = block.innerHTML;
     block.innerHTML = `
-    <h1> Slick Block </h1>
+    <h1> Slick Block 2</h1>
     <div id="slick-items">
     ${defaultHTML}
     </div>
