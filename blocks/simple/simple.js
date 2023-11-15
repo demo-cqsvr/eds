@@ -11,5 +11,6 @@ export default async function decorate(block) {
       <h1> Hello Simple Block v0.1 </h1>
       <h2>${defaultText}</h2>
       <hr>
-      `;      
+      `;
+      
   }
