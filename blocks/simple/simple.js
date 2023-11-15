@@ -9,7 +9,7 @@ export default async function decorate(block) {
       block.innerHTML = `
       <hr>
       <h1> Hello Simple Block </h1>
-      ${defaultText}
+      <h2>${defaultText}</h2>
       <hr>
       `;      
   }
