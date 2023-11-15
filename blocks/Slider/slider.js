@@ -6,46 +6,44 @@
 
 export default async function decorate(block) {
     const defaultHTML = block.innerHTML;
-    block.innerHTML = `
-    <h1> Slick Block 2</h1>
-    <div id="slick-items">
-    ${defaultHTML}
-    </div>
-    `;
+    const swWrapper = block.closest('div');
+    block.classList.add('swiper-wrapper');
+    const slides = block.querySelector('div');
+    [...block.children].forEach( (slide) => {
+        slide.classList.add('swiper-slide');
+    });
+    // block.innerHTML = `
+    // <h1> Swiper Block Ver0.1 </h1>
+    // <div class="swiper-container">
+    // ${defaultHTML}
+    // </div>
+    // `;
 
     let head = document.getElementsByTagName('head').item(0);
     let link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css';
+    link.href = 'https://unpkg.com/swiper@8/swiper-bundle.min.css';
     link.type = 'text/css';
     head.appendChild(link);
 
     let link2 = document.createElement('link');
     link2.rel = 'stylesheet';
-    link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css';
+    link2.href = 'https://unpkg.com/swiper@8/swiper.min.css';
     head.appendChild(link2);
 
     let script = document.createElement('script');
     script.type="text/javascript";
-    script.src="https://code.jquery.com/jquery-1.11.0.min.js";
+    script.src="https://unpkg.com/swiper@8/swiper-bundle.min.js";
     head.appendChild(script);
 
-    let script2 = document.createElement('script');
-    script2.type="text/javascript";
-    script2.src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js";
-    head.appendChild(script2);
 
 
     let script3 = document.createElement('script');
     script3.innerHTML = `
         setTimeout( function() {
-            $('#slick-items').slick({
-                slidesToShow: 1,
-                slideToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 5,
-                arrows: true
-            })
+            const mySwiper = new Swiper('.slider-wrapper',{
+                loop: true
+            });
         },1000 );
     `;
     document.body.appendChild(script3);
