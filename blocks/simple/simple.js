@@ -5,12 +5,11 @@
  */
 
 export default async function decorate(block) {
-      const defaultText = block.innerHTML;
-      block.innerHTML = `
+  const defaultText = block.innerHTML;
+  block.innerHTML = `
       <hr>
-      <h1> Hello Simple Block v0.1 </h1>
+      <h1> Hello Simple Block v0.2 </h1>
       <h2>${defaultText}</h2>
       <hr>
       `;
-      
-  }
+}
