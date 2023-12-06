@@ -8,7 +8,7 @@ export default async function decorate(block) {
   // const defaultHTML = block.innerHTML;
   // const swWrapper = block.closest('div');
   block.classList.add('swiper-wrapper');
-  // const slides = block.querySelector('div');
+  //const slides = block.querySelector('div');
   [...block.children].forEach((slide) => {
     slide.classList.add('swiper-slide');
   });
@@ -38,11 +38,12 @@ export default async function decorate(block) {
 
   const script3 = document.createElement('script');
   script3.innerHTML = `
-        setTimeout( function() {
-            const mySwiper = new Swiper('.slider-wrapper',{
-                loop: true
-            });
-        },1000 );
+    setTimeout( function() {
+        const mySwiper = new Swiper('.slider-wrapper',{
+            loop: true
+        });
+    },1000 );
     `;
+
   document.body.appendChild(script3);
 }
