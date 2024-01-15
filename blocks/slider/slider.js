@@ -8,7 +8,7 @@ export default async function decorate(block) {
   // const defaultHTML = block.innerHTML;
   // const swWrapper = block.closest('div');
   block.classList.add('swiper-wrapper');
-  //const slides = block.querySelector('div');
+  // const slides = block.querySelector('div');
   [...block.children].forEach((slide) => {
     slide.classList.add('swiper-slide');
   });
